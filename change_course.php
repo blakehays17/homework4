@@ -38,9 +38,9 @@
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         switch ($_POST['saveType']) {
                             case 'Edit':
-                                $sqlEdit = "update enroll set student_id=? where course_id=?";
+                                $sqlEdit = "update enroll set course_id=? where enroll_id=?";
                                 $stmtEdit = $conn->prepare($sqlEdit);
-                                $stmtEdit->bind_param("ii", $_POST['eHistory'], $_POST['cid']);
+                                $stmtEdit->bind_param("ii", $_POST['cid'], $_POST['eHistory']);
                                 $stmtEdit->execute();
                                 echo '<div class="alert alert-success" role="alert">Enrollment changed.</div>';
                                 break;
@@ -80,17 +80,17 @@
                                                 <select class="form-select" aria-label="Select a student"
                                                     id="eHistory<?=$row['enroll_id']?>" name="eHistory">
                                                     <?php
-                                                        $studentSql = "SELECT * from student s join enroll e on s.student_id=e.student_id order by student_id";
+                                                        $studentSql = "SELECT * from enroll order by enroll_id";
                                                         $studentResult = $conn->query($studentSql);
                                                         while($studentRow = $studentResult->fetch_assoc()) {
-                                                            if ($studentRow['student_id'] == $row['student_id']) {
+                                                            if ($studentRow['enroll_id'] == $row['enroll_id']) {
                                                                 $selText = " selected";
                                                             } else {
                                                                 $selText = "";
                                                             }
                                                     ?>
-                                                    <option value="<?=$studentRow['student_id']?>" <?=$selText?>>
-                                                        <?=$studentRow['student_name']?>
+                                                    <option value="<?=$studentRow['enroll_id']?>" <?=$selText?>>
+                                                        <?=$studentRow['student_id']?>
                                                     </option>
                                                     <?php
                                                         }
