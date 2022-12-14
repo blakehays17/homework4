@@ -12,7 +12,7 @@
 
 <body>
     <?php include("header.php"); ?>
-    <div class="content">
+    <div class="content container">
         <?php
             $servername = "localhost";
             $username = "blakehay_s";
