@@ -20,7 +20,7 @@
                     <a class="nav-link" href="enrolls.php">Enrolls</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="unenroll.php">Unenroll</a>
+                    <a class="nav-link" href="change_course.php">Change Course</a>
                 </li>
             </ul>
         </div>
