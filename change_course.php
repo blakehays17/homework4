@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("bootstrap.php"); ?>
     <link rel="stylesheet" href="main.css">
-    <title>Change Course</title>
+    <title>Chnage Course</title>
 </head>
 
 <body>
     <?php include("header.php"); ?>
     <div class="content container">
-        <h1>Chnage Course</h1>
-        <table class="table table-striped table-bordered table-hover table-responsive">
+        <h1>Change Course</h1>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Student Name</th>
@@ -102,17 +102,17 @@
                                                 <select class="form-select" aria-label="Select a course" id="cTitle"
                                                     name="cTitle">
                                                     <?php
-                                                        $courseSql = "select * from course order by course_title";
-                                                        $courseResult = $conn->query($courseSql);
-                                                        while($courseRow = $courseResult->fetch_assoc()) {
-                                                            if ($courseRow['course_id'] == $row['course_id']) {
+                                                        $studentSql = "select * from course order by course_title";
+                                                        $studentResult = $conn->query($studentSql);
+                                                        while($studentRow = $studentResult->fetch_assoc()) {
+                                                            if ($studentRow['course_id'] == $row['course_id']) {
                                                                 $selText = " selected";
                                                             } else {
                                                             $selText = "";
                                                             }
                                                     ?>
-                                                    <option value="<?=$courseRow['course_id']?>" <?=$selText?>>
-                                                        <?=$courseRow['course_title']?>
+                                                    <option value="<?=$studentRow['course_id']?>" <?=$selText?>>
+                                                        <?=$studentRow['course_title']?>
                                                     </option>
                                                     <?php
                                                         }
