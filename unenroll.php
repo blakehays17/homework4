@@ -14,7 +14,7 @@
     <?php include("header.php"); ?>
     <div class="content container">
         <h1>Unenroll</h1>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
                     <th>Student Name</th>
