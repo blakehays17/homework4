@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("bootstrap.php"); ?>
     <link rel="stylesheet" href="main.css">
-    <title>Chnage Course</title>
+    <title>Change Course</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         switch ($_POST['saveType']) {
                             case 'Edit':
-                                $sqlEdit = "update enroll set student_id=? where course_id=?";
+                                $sqlEdit = "update enroll set enroll_id=? where course_id=?";
                                 $stmtEdit = $conn->prepare($sqlEdit);
                                 $stmtEdit->bind_param("ii", $_POST['eHistory'], $_POST['cid']);
                                 $stmtEdit->execute();
