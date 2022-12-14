@@ -83,7 +83,7 @@
                                                         $studentSql = "SELECT * from student s join enroll e on s.student_id=e.student_id";
                                                         $studentResult = $conn->query($studentSql);
                                                         while($studentRow = $studentResult->fetch_assoc()) {
-                                                            if ($studentRow['student_id'] == $row['student_id']) {
+                                                            if ($studentRow['enroll_id'] == $row['enroll_id']) {
                                                                 $selText = " selected";
                                                             } else {
                                                                 $selText = "";
