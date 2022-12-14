@@ -38,9 +38,9 @@
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         switch ($_POST['saveType']) {
                             case 'Edit':
-                                $sqlEdit = "update enroll set enroll_id=? where course_id=?";
+                                $sqlEdit = "update enroll set course_id=? where enroll_id=?";
                                 $stmtEdit = $conn->prepare($sqlEdit);
-                                $stmtEdit->bind_param("ii", $_POST['eHistory'], $_POST['cid']);
+                                $stmtEdit->bind_param("ii", $_POST['cid'], $_POST['eHistory']);
                                 $stmtEdit->execute();
                                 echo '<div class="alert alert-success" role="alert">Enrollment changed.</div>';
                                 break;
