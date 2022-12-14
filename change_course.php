@@ -47,7 +47,7 @@
                             }
                         }
 
-                    $sql = "SELECT s.student_id, s.student_name, c.course_title, c.course_id, e.enroll_id from course c join enroll e on c.course_id = e.course_id join student s on e.student_id = s.student_id";
+                    $sql = "SELECT distinct s.student_id, s.student_name, c.course_title, e.course_id, e.enroll_id from course c join enroll e on c.course_id = e.course_id join student s on e.student_id = s.student_id";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                     // output data of each row
