@@ -89,7 +89,7 @@
                                                                 $selText = "";
                                                             }
                                                     ?>
-                                                    <option value="<?=$studentRow['student_id']?>" <?=$selText?>>
+                                                    <option value="<?=$studentRow['enroll_id']?>" <?=$selText?>>
                                                         <?=$studentRow['student_name']?>
                                                     </option>
                                                     <?php
