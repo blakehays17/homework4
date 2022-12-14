@@ -34,6 +34,7 @@
         <p>
             On the enrolls page you can change, add, or delete a semester for a given enrollment ID.
         </p>
+        <br>
         <h2>Change Course</h2>
         <p>
             On the change course page you can change which course a student is in incase there is an error.
