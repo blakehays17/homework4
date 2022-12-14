@@ -58,10 +58,10 @@
                     <td><?=$row["course_title"]?></td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#edit<?=$row["enroll_id"]?>">
+                            data-bs-target="#edit<?=$row['enroll_id']?>">
                             Edit
                         </button>
-                        <div class="modal fade" id="edit<?=$row["enroll_id"]?>" data-bs-backdrop="static"
+                        <div class="modal fade" id="edit<?=$row['enroll_id']?>" data-bs-backdrop="static"
                             data-bs-keyboard="false" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -74,13 +74,13 @@
                                     <div class="modal-body">
                                         <form method="post" action="">
                                             <div class="mb-3">
-                                                <label for="eHistory<?=$row["enroll_id"]?>" class="form-label">
+                                                <label for="eHistory<?=$row['enroll_id']?>" class="form-label">
                                                     Select a student.
                                                 </label>
                                                 <select class="form-select" aria-label="Select a student"
-                                                    id="eHistory<?=$row["enroll_id"]?>" name="eHistory">
+                                                    id="eHistory<?=$row['enroll_id']?>" name="eHistory">
                                                     <?php
-                                                        $studentSql = "SELECT * from student s join enroll e on s.student_id = e.student_id order by student_id";
+                                                        $studentSql = "SELECT * from student order by student_id";
                                                         $studentResult = $conn->query($studentSql);
                                                         while($studentRow = $studentResult->fetch_assoc()) {
                                                             if ($studentRow['student_id'] == $row['student_id']) {
@@ -89,7 +89,7 @@
                                                                 $selText = "";
                                                             }
                                                     ?>
-                                                    <option value="<?=$studentRow['enroll_id']?>" <?=$selText?>>
+                                                    <option value="<?=$studentRow['student_id']?>" <?=$selText?>>
                                                         <?=$studentRow['student_name']?>
                                                     </option>
                                                     <?php
