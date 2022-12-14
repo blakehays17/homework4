@@ -74,7 +74,7 @@
                     <td><?=$row["instructor_id"]?></td>
                     <td><?=$row["instructor_firstname"]?></td>
                     <td>
-                        <button type="button" class="btn" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#editInstructor<?=$row["instructor_id"]?>">
                             Edit
                         </button>
@@ -120,7 +120,8 @@
                         <form method="post" action="">
                             <input type="hidden" name="iid" value="<?=$row["instructor_id"]?>" />
                             <input type="hidden" name="saveType" value="Delete">
-                            <input type="submit" class="btn" onclick="return confirm('Are you sure?')" value="Delete">
+                            <input type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"
+                                value="Delete">
                         </form>
                     </td>
                 </tr>
