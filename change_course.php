@@ -40,7 +40,7 @@
                             case 'Edit':
                                 $sqlEdit = "update enroll set student_id=? where course_id=?";
                                 $stmtEdit = $conn->prepare($sqlEdit);
-                                $stmtEdit->bind_param("ii", $_POST['eHistory'], $_POST['cTitle']);
+                                $stmtEdit->bind_param("ii", $_POST['eHistory'], $_POST['cid']);
                                 $stmtEdit->execute();
                                 echo '<div class="alert alert-success" role="alert">Enrollment changed.</div>';
                                 break;
@@ -98,9 +98,9 @@
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="cTitle" class="form-label">Choose a Course</label>
-                                                <select class="form-select" aria-label="Select a course" id="cTitle"
-                                                    name="cTitle">
+                                                <label for="courseList" class="form-label">Choose a Course</label>
+                                                <select class="form-select" aria-label="Select a course" id="courseList"
+                                                    name="cid">
                                                     <?php
                                                         $studentSql = "select * from course order by course_title";
                                                         $studentResult = $conn->query($studentSql);
