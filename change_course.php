@@ -80,7 +80,7 @@
                                                 <select class="form-select" aria-label="Select a student"
                                                     id="eHistory<?=$row['enroll_id']?>" name="eHistory">
                                                     <?php
-                                                        $studentSql = "SELECT * from enroll order by enroll_id";
+                                                        $studentSql = "SELECT * from enroll e join student s on e.student_id = s.student_id order by enroll_id";
                                                         $studentResult = $conn->query($studentSql);
                                                         while($studentRow = $studentResult->fetch_assoc()) {
                                                             if ($studentRow['enroll_id'] == $row['enroll_id']) {
