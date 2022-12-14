@@ -90,7 +90,7 @@
                                                             }
                                                     ?>
                                                     <option value="<?=$studentRow['enroll_id']?>" <?=$selText?>>
-                                                        <?=$studentRow['student_id']?>
+                                                        <?=$studentRow['student_name']?>
                                                     </option>
                                                     <?php
                                                         }
