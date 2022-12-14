@@ -80,16 +80,16 @@
                                                 <select class="form-select" aria-label="Select a student"
                                                     id="eHistory<?=$row['enroll_id']?>" name="eHistory">
                                                     <?php
-                                                        $studentSql = "SELECT * from student s join enroll e on s.student_id=e.student_id";
+                                                        $studentSql = "SELECT * from student s join enroll e on s.student_id=e.student_id order by student_id";
                                                         $studentResult = $conn->query($studentSql);
                                                         while($studentRow = $studentResult->fetch_assoc()) {
-                                                            if ($studentRow['enroll_id'] == $row['enroll_id']) {
+                                                            if ($studentRow['student_id'] == $row['student_id']) {
                                                                 $selText = " selected";
                                                             } else {
                                                                 $selText = "";
                                                             }
                                                     ?>
-                                                    <option value="<?=$studentRow['enroll_id']?>" <?=$selText?>>
+                                                    <option value="<?=$studentRow['student_id']?>" <?=$selText?>>
                                                         <?=$studentRow['student_name']?>
                                                     </option>
                                                     <?php
