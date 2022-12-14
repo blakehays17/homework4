@@ -1,0 +1,15 @@
+.content {
+  min-height: calc(100vh - 70px);
+}
+footer {
+  height: 50px;
+  background-color: lightgrey;
+  color: darkgrey;
+  text-align: center;
+}
+.footer {
+  line-height: 50px;
+}
+.navbar {
+  background-color: lightcyan !important;
+}
