@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("bootstrap.php"); ?>
     <link rel="stylesheet" href="main.css">
-    <title>Unenroll</title>
+    <title>Change Course</title>
 </head>
 
 <body>
     <?php include("header.php"); ?>
     <div class="content container">
-        <h1>Unenroll</h1>
+        <h1>Chnage Course</h1>
         <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
